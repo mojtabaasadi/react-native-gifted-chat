@@ -14,6 +14,7 @@ import {
   StyleProp,
   ViewStyle,
   Platform,
+  I18nManager,
 } from 'react-native'
 
 import LoadEarlier from './LoadEarlier'
@@ -242,7 +243,7 @@ export default class MessageContainer<
         previousMessage,
         inverted,
         nextMessage,
-        position: item.user._id === user._id ? 'right' : 'left',
+        position: item.user._id === user._id ? (I18nManager.isRTL ? 'left' : 'right') : (I18nManager.isRTL ? 'right' : 'left'),
       }
 
       if (this.props.renderMessage) {
