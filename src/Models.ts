@@ -26,14 +26,14 @@ export { TimeProps } from './Time'
 export type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
 export interface LeftRightStyle<T> {
-  left: StyleProp<T>
-  right: StyleProp<T>
+  left?: StyleProp<T>
+  right?: StyleProp<T>
 }
 type renderFunction = (x: any) => JSX.Element
 export interface User {
   _id: string | number
   name?: string
-  avatar?: string | renderFunction
+  avatar?: string | number | renderFunction
 }
 
 export interface Reply {
